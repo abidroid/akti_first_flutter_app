@@ -44,35 +44,42 @@ class FirstScreen extends StatelessWidget {
           'AKTI App',
           style: TextStyle(color: Colors.white, fontSize: 40),
         ),
-      ),
-      body: Stack(
-        alignment: Alignment.center,
-        clipBehavior: Clip.none,
-        children: [
-          Container(
-            width: 300,
-            height: 300,
-            color: Colors.red,
-          ),
-          Container(
-            width: 200,
-            height: 200,
-            color: Colors.amber,
-          ),
-
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.blue,
-          ),
-
-          Positioned(
-              bottom: -25,
-              right: 20,
-              child: Container(width: 50, height: 50, color: Colors.yellow,)),
-
-
+        actions: [
+          IconButton(onPressed: (){}, icon: Icon(Icons.logout, color: Colors.white,)),
         ],
+      ),
+      body: Column(
+
+        children: [
+
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              // backgroundColor: Colors.green,
+              // foregroundColor: Colors.yellow,
+              elevation: 30,
+            ),
+
+            onPressed: (){
+            print('LOGIN clicked');
+          },
+          child: Text('LOGIN'),
+
+          ),
+
+          TextButton(onPressed: (){}, child: Text("Not Registered Yet? SIGNUP")),
+          
+          OutlinedButton(onPressed: (){}, child: Text("REGISTER")),
+
+          ElevatedButton.icon(onPressed: (){}, label: Text('Settings'),
+            icon: Icon(Icons.settings),
+          ),
+
+          Icon(Icons.shopping_cart, color: Colors.blue, size: 50,),
+          Icon(Icons.person),
+          
+          IconButton(onPressed: (){}, icon: Icon(Icons.rss_feed))
+        ],
+
       ),
     );
   }
