@@ -22,42 +22,22 @@ class GridviewDemoScreen extends StatelessWidget {
         backgroundColor: Colors.amber,
         title: Text('GridView Demo'),
       ),
-      body: GridView(
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 300,
-            crossAxisSpacing: 5,
-          mainAxisSpacing: 5,
-          mainAxisExtent: 200,
-        ),
-        children: [
-          Container(color: Colors.red,),
-          Container(color: Colors.green,),
-          Container(color: Colors.blue,),
-          Container(color: Colors.cyan,),
-          Container(color: Colors.red,),
-          Container(color: Colors.green,),
-          Container(color: Colors.brown,),
-          Container(color: Colors.cyan,),
-          Container(color: Colors.red,),
-          Container(color: Colors.green,),
-          Container(color: Colors.blue,),
-          Container(color: Colors.cyan,),
-          Container(color: Colors.red,),
-          Container(color: Colors.yellow,),
-          Container(color: Colors.brown,),
-          Container(color: Colors.pink,),
-          Container(color: Colors.brown,),
-          Container(color: Colors.cyan,),
-          Container(color: Colors.red,),
-          Container(color: Colors.green,),
-          Container(color: Colors.blue,),
-          Container(color: Colors.cyan,),
-          Container(color: Colors.red,),
-          Container(color: Colors.yellow,),
-          Container(color: Colors.brown,),
-          Container(color: Colors.pink,),
-        ],
-      ),
+      body: GridView.builder(
+        itemCount: doctorsList.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2) ,
+          itemBuilder: (BuildContext context, int index){
+            return Card(
+                color: Colors.yellow,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(doctorsList[index].name),
+                    Text(doctorsList[index].spe),
+                    Text(doctorsList[index].mobile ?? "NA"),
+
+                  ],
+                ));
+          })
     );
   }
 }
