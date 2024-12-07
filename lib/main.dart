@@ -1,4 +1,5 @@
 import 'package:akti_first_flutter_app/screens/first_screen.dart';
+import 'package:akti_first_flutter_app/screens/listview_demo_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
-      home: const FirstScreen(),
+      home: const ListviewDemoScreen(),
     );
   }
 }
