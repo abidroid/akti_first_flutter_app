@@ -9,12 +9,20 @@ class GridviewDemoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     List<Doctor> doctorsList = [
-      Doctor(name: 'Ali', spe: 'ENT'),
+      Doctor(name: 'Abu Bakar', spe: 'Flutter Specialist', clinicAddress: 'AKTI',),
+      Doctor(name: 'Ali', spe: 'ENT', clinicAddress: 'KMC Dabgari'),
       Doctor(name: 'Bilal', spe: 'Cardiologist', mobile: '0332993939393'),
-      Doctor(name: 'Hina', spe: 'General Physician'),
+      Doctor(
+        name: 'Hina',
+        spe: 'General Physician',
+        clinicAddress: 'CMH',
+        clinicTime: '5pm - 8pm',
+        fee: 5000,
+      ),
       Doctor(name: 'Abid', spe: 'Orthopedic'),
       Doctor(name: 'Salman', spe: 'Dentist', mobile: '0332993939393'),
       Doctor(name: 'Gia', spe: 'Anesthesia'),
+
     ];
 
     return Scaffold(
