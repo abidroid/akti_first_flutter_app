@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/doctor.dart';
+import 'doctor_detail_screen.dart';
 
 class GridviewDemoScreen extends StatelessWidget {
   const GridviewDemoScreen({super.key});
@@ -32,19 +33,33 @@ class GridviewDemoScreen extends StatelessWidget {
       ),
       body: GridView.builder(
         itemCount: doctorsList.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2) ,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+          crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+          ) ,
           itemBuilder: (BuildContext context, int index){
-            return Card(
-                color: Colors.yellow,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(doctorsList[index].name),
-                    Text(doctorsList[index].spe),
-                    Text(doctorsList[index].mobile ?? "NA"),
+            return InkWell(
+              onTap: (){
 
-                  ],
-                ));
+
+                Doctor doctor = doctorsList[index];
+
+                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context){
+                  return DoctorDetailScreen(doctor: doctor,);
+                }));
+              },
+              child: Card(
+                  color: Colors.yellow,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(doctorsList[index].name),
+                      Text(doctorsList[index].spe),
+                      Text(doctorsList[index].mobile ?? "NA"),
+
+                    ],
+                  )),
+            );
           })
     );
   }
