@@ -1,3 +1,6 @@
+import 'package:akti_first_flutter_app/screens/gridview_demo_screen.dart';
+import 'package:akti_first_flutter_app/screens/listview_demo_screen.dart';
+import 'package:akti_first_flutter_app/screens/second_screen.dart';
 import 'package:flutter/material.dart';
 
 class FirstScreen extends StatelessWidget {
@@ -77,7 +80,37 @@ class FirstScreen extends StatelessWidget {
           Icon(Icons.shopping_cart, color: Colors.blue, size: 50,),
           Icon(Icons.person),
           
-          IconButton(onPressed: (){}, icon: Icon(Icons.rss_feed))
+          IconButton(onPressed: (){}, icon: Icon(Icons.rss_feed)),
+          
+          ElevatedButton(onPressed: (){
+
+            // Navigator
+            // MaterialPageRoute
+
+            Navigator.of(context).push(MaterialPageRoute(builder: (context){
+              return SecondScreen();
+            }));
+
+
+          }, child: const Text("Go to 2nd Screen")),
+
+          ElevatedButton(onPressed: (){
+
+            Navigator.of(context).push(MaterialPageRoute(builder: (context){
+              return ListviewDemoScreen();
+            }));
+
+
+          }, child: const Text("Show Doctors List")),
+
+          ElevatedButton(onPressed: (){
+
+            Navigator.of(context).push(MaterialPageRoute(builder: (context){
+              return GridviewDemoScreen();
+            }));
+
+
+          }, child: const Text("Show Doctors Grid")),
         ],
 
       ),
