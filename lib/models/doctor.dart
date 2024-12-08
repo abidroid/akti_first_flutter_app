@@ -5,6 +5,7 @@ class Doctor {
   String? clinicAddress;
   String? clinicTime;
   double? fee;
+  String? imagePath;
 
   Doctor({
     required this.name,
@@ -13,5 +14,6 @@ class Doctor {
     this.clinicAddress,
     this.clinicTime,
     this.fee,
+    this.imagePath,
   });
 }

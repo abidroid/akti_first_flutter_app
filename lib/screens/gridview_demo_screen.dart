@@ -20,7 +20,7 @@ class GridviewDemoScreen extends StatelessWidget {
         clinicTime: '5pm - 8pm',
         fee: 5000,
       ),
-      Doctor(name: 'Abid', spe: 'Orthopedic'),
+      Doctor(name: 'Abid', spe: 'Orthopedic', imagePath: 'https://avatars.githubusercontent.com/u/17814795?v=4'),
       Doctor(name: 'Salman', spe: 'Dentist', mobile: '0332993939393'),
       Doctor(name: 'Gia', spe: 'Anesthesia'),
 
@@ -44,7 +44,7 @@ class GridviewDemoScreen extends StatelessWidget {
 
                 Doctor doctor = doctorsList[index];
 
-                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
                   return DoctorDetailScreen(doctor: doctor,);
                 }));
               },
@@ -53,6 +53,10 @@ class GridviewDemoScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      CircleAvatar(
+                        radius: 50,
+                        backgroundImage: NetworkImage(doctorsList[index].imagePath ?? 'https://img.freepik.com/premium-vector/avatar-icon0002_750950-43.jpg?semt=ais_hybrid'),
+                      ),
                       Text(doctorsList[index].name),
                       Text(doctorsList[index].spe),
                       Text(doctorsList[index].mobile ?? "NA"),

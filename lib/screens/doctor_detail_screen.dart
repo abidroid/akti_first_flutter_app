@@ -14,6 +14,10 @@ class DoctorDetailScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Doctor Details'),),
 
       body: ListView(children: [
+        CircleAvatar(
+          radius: 150,
+          backgroundImage: NetworkImage(doctor.imagePath ?? 'https://img.freepik.com/premium-vector/avatar-icon0002_750950-43.jpg?semt=ais_hybrid'),
+        ),
         Text('Name ${doctor.name}', style: myCustomTextStyle),
         Text('Spe ${doctor.spe}', style: myCustomTextStyle),
         Text('Mobile ${doctor.mobile}', style: myCustomTextStyle),
