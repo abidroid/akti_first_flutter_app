@@ -11,7 +11,7 @@ class GridviewDemoScreen extends StatelessWidget {
 
     List<Doctor> doctorsList = [
       Doctor(name: 'Abu Bakar', spe: 'Flutter Specialist', clinicAddress: 'AKTI',),
-      Doctor(name: 'Ali', spe: 'ENT', clinicAddress: 'KMC Dabgari'),
+       Doctor(name: 'Ali', spe: 'ENT', clinicAddress: 'KMC Dabgari'),
       Doctor(name: 'Bilal', spe: 'Cardiologist', mobile: '0332993939393'),
       Doctor(
         name: 'Hina',

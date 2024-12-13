@@ -58,6 +58,7 @@ class FirstScreen extends StatelessWidget {
         ],
       ),
       body: ListView(
+
         children: [
 
           Image.asset('pictures/profile_screen.png', width: 400, height: 200,),

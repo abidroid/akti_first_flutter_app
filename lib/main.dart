@@ -1,3 +1,4 @@
+import 'package:akti_first_flutter_app/screens/demo_screen.dart';
 import 'package:akti_first_flutter_app/screens/first_screen.dart';
 import 'package:akti_first_flutter_app/screens/gridview_demo_screen.dart';
 import 'package:akti_first_flutter_app/screens/listview_demo_screen.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
-      home: const FirstScreen(),
+      home: const DemoScreen(),
     );
   }
 }
