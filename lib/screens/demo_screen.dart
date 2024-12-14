@@ -20,10 +20,15 @@ class DemoScreen extends StatelessWidget {
           color: Colors.red,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(16.0),
-            child: Image.asset(
-              'pictures/iphone.jpg',
-              width: 200,
-              height: 200,
+            child: GestureDetector(
+              onTap: (){
+
+              },
+              child: Image.asset(
+                'pictures/iphone.jpg',
+                width: 200,
+                height: 200,
+              ),
             ),
           ),
         ),
